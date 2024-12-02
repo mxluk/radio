@@ -1,0 +1,20 @@
+services:
+  liquidsoap:
+    container_name: liquidsoap
+    image: pltnk/liquidsoap
+    volumes:
+      - ./script.liq:/etc/liquidsoap/script.liq
+      - ./music:/music
+  icecast2:
+    image: moul/icecast
+    container_name: icecast2
+    ports:
+      - 8000:8000
+    environment:
+      - ICECAST_SOURCE_PASSWORD=hackme
+      - ICECAST_ADMIN_PASSWORD=hackme
+      - ICECAST_PASSWORD=hackme
+      - ICECAST_RELAY_PASSWORD=hackme
+    volumes:
+      - ./icecast-logs:/usr/local/icecast/logs//var/log/icecast
+

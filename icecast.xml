@@ -1,0 +1,57 @@
+<icecast>
+  <!-- Paths -->
+  <limits>
+    <clients>100</clients> <!-- Maximum number of clients -->
+    <sources>2</sources>  <!-- Maximum number of streams -->
+    <queue-size>524288</queue-size>
+    <client-timeout>30</client-timeout>
+    <header-timeout>15</header-timeout>
+    <source-timeout>10</source-timeout>
+    <burst-on-connect>1</burst-on-connect>
+    <burst-size>65535</burst-size>
+  </limits>
+
+  <!-- Authentication -->
+  <authentication>
+  <admin>
+    <username>admin</username>
+    <password>hackme</password>
+  </admin>
+</authentication>
+
+
+  <!-- Hostname and ports -->
+  <hostname>localhost</hostname> <!-- Change to your domain or IP -->
+  <listen-socket>
+    <port>8000</port>
+  </listen-socket>
+
+  <!-- Mountpoints -->
+  <mount>
+    <mount-name>/stream</mount-name>
+    <file>/tmp/stream.mp3</file> <!-- Temporary file used by source client -->
+    <genre>AI Podcast</genre>
+    <public>1</public>
+  </mount>
+
+  <!-- Admin Interface -->
+  <admin>
+    <username>admin</username>
+    <password>hackme</password>
+  </admin>
+
+  <!-- Logging -->
+  <logging>
+    <accesslog>/var/log/icecast/access.log</accesslog>
+    <errorlog>/var/log/icecast/error.log</errorlog>
+    <loglevel>3</loglevel> <!-- 1=debug, 2=info, 3=warn, 4=error -->
+  </logging>
+
+  <!-- Security -->
+  <security>
+    <chroot>0</chroot>
+  </security>
+
+  <hostname>icecast2</hostname>
+
+</icecast>
